@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif,Arial, Helvetica;
+}
+/*#27272a;*/
+body {
+    min-height:100vh;
+    width: 100%;
+  flex-direction: column;
+    background-image:#0a0a0a;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #d4cacae5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+}
+.info {
+  width: 100%;
+  margin-left: -30px;
+  white-space: wrap;
+}
+.header a{
+  width: fit-content;
+  margin: 0 0 0 -24px;
+  padding: 0;
+}
+.header .title{
+  font-size: 18px;
+}
+header h2 {
+    margin: 10px 0;
+    padding: 0 15px;
+}
+.decs{
+  font-weight: 700;
+  white-space: nowrap;
+  color:#fff;
+}
+.container{
+    background-color: #0a0a0a;
+    position: relative;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding:160px 0px 15px;
+    width: 400px;
+}
+.coin_wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 8px;
+   
+}
+.search-box {
+  width: 100%;
+  display: flex;
+  color: #d4cacae5;
+}
+.box {
+  padding: 0 15px;
+}
+.search-btn, #search{
+  padding: 10px 15px;
+  border: none;
+  background-color: #27272b;
+  color: #d4cacae5;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search {
+  flex: 1;
+  width: 0;
+  border-radius: 5px 0 0 5px;
+}
+#search:focus{
+  outline: none;
+  
+}
+.search-box:has(#search:focus){
+  border:1px solid #d4cacae5;
+  border-radius: 5px;
+}
+.search-btn {
+  padding: 5px;
+  border-left-color: #000;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 0 5px 5px 0;
+  margin-left: -2px;
+}
+.animated-prices{
+    height: 100px;
+    width: 100%;
+  gap: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+.animated-prices img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.animated-prices .coinsMoving{
+    border-left-width:2px ;
+    border-left-style: solid;
+    border-left-color: #27272a;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #d4cacae5;
+  width:100%;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+}
+.coinsMoving p{
+    white-space: nowrap;
+}
+.moving {
+    display: flex;
+    padding: 8px 0 8px 15px;
+    height: 100%;
+    animation: moving 30s linear infinite ; 
+}
+.moving:last-child{
+    padding: 8px 0;
+}
+.animated-prices .coinsMoving:last-child{
+    padding: 0px 0 0px 12px;
+}
+.animated-prices .coin {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    border: none;
+}
+.span {
+    margin-left: 5px;
+}
+.pecentage-red {
+    color: red;
+}
+.pecentage-green {
+    color: rgb(0, 255, 34);
+   
+}
+.pic_coin{
+    display: flex;
+    gap: 10px;
+}
+.pic_coin img{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+}
+.pic_coin p,.cap h4{
+    font-size: 14px;
+}
+.pic_coin h4, .cap h4{
+    margin-bottom: 1px;
+}
+.stat {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 12px;
+    background-color: #27272a;
+    align-items: center;
+    border-radius: 10px;
+}
+.title {
+    text-align: center;
+    font-size: 26px;
+  margin: 0 0 10px;
+}
+.suctitle {
+  margin: 8px 0;  
+  font-size: 16px;
+}
+.para {
+    text-align: start;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.btn-container{
+    padding: 4px 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+.btn-container button{
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: #000;
+    color: #d4cacae5;
+    border: none;
+    border-radius: 5px;
+}
+.stat-section{
+    width: 100%;
+    overflow: hidden;
+}
+canvas {
+    width: 100%;
+    max-width: 650px;
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.btn-container button:focus,.btn-container button:active{
+    background-color: grey;
+    color: #d4cacae5;
+    border: none;
+    border-radius: 5px;
+}
+.stat div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+}
+.load {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color:#27272a;
+  padding: 10px 15px;
+}
+
+.loa img{
+border-radius:50%;
+width:50px;
+height:50px;
+animation: rat 1s linear infinite;
+}
+
+
+@keyframes rat{
+0%{
+transform:rotate(0deg)
+}
+100%{
+transform:rotate(360deg)
+}
+
+}
+@keyframes moving {
+    from{
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@media screen and (max-width:950px){
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        
+    }
+    .animated-prices{
+        background-color: #27272a;
+    }
+    .animated-prices .coinsMoving{
+        border-left-color:#0a0a0a ;
+    }
+    header {
+        position: fixed;
+        z-index: 10;
+        background-color:#0a0a0a ;
+    }
+    .container{
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #000;
+    }
+}
