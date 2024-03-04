@@ -63,7 +63,8 @@ async function fetchData(url) {
     try{
         const res = await fetch(url,{
             headers:{
-                x_cg_demo_api_key:apikey
+                x_cg_demo_api_key:apikey,
+		    Access-Control-Allow-Origin: *
             }
         })
     const data = await res.json()
@@ -79,7 +80,8 @@ async function fetchDetails(url) {
     try{
     const res = await fetch(url,{
             headers:{
-                x_cg_demo_api_key:apikey
+                x_cg_demo_api_key:apikey,
+		    Access-Control-Allow-Origin:*
             }
     })
     const data = await res.json()
@@ -95,6 +97,7 @@ async function fetchMarket(url) {
     const res = await fetch(url,{
             headers:{
                 x_cg_demo_api_key:apikey
+		    Access-Control-Allow-Origin:*
             }
         })
     const data = await res.json()
@@ -144,7 +147,8 @@ function displayMarket(data) {
                     <span>Total Supply</span>
                     <span class="decs">${stringFormat(coin.total_supply.toFixed())} ${coin.symbol.toUpperCase()}</span>
                 </div>
-            </div>`
+            </div>
+`
 }
 function displayData(data) {
     let d= data.description.en.split("") //.replaceAll(new RegExp("^[\\u003ca]+\\w*[\\u003e]$","g"), "")
