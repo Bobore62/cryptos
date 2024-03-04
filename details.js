@@ -96,7 +96,7 @@ async function fetchMarket(url) {
     try{
     const res = await fetch(url,{
             headers:{
-                x_cg_demo_api_key:apikey
+                x_cg_demo_api_key:apikey,
 		    Access-Control-Allow-Origin:*
             }
         })
