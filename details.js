@@ -64,7 +64,7 @@ async function fetchData(url) {
         const res = await fetch(url,{
             headers:{
                 x_cg_demo_api_key:apikey,
-		    Access-Control-Allow-Origin: *
+		    "Access-Control-Allow-Origin": *
             }
         })
     const data = await res.json()
@@ -81,7 +81,7 @@ async function fetchDetails(url) {
     const res = await fetch(url,{
             headers:{
                 x_cg_demo_api_key:apikey,
-		    Access-Control-Allow-Origin:*
+		   " Access-Control-Allow-Origin":*
             }
     })
     const data = await res.json()
@@ -97,7 +97,7 @@ async function fetchMarket(url) {
     const res = await fetch(url,{
             headers:{
                 x_cg_demo_api_key:apikey,
-		    Access-Control-Allow-Origin:*
+		    "Access-Control-Allow-Origin":*
             }
         })
     const data = await res.json()
