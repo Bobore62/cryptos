@@ -11,14 +11,16 @@ async function fetchData(ids="") {
         if(ids) {
              res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=["bitcoin",${ids},"bitcoin"]`,{
             headers:{
-                x_cg_demo_api_key:apikey
+                x_cg_demo_api_key:apikey,
+		    Access-Control-Allow-Origin:*
             }
         })
    
         } else {
             res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd',{
                 headers:{
-                    x_cg_demo_api_key:apikey
+                    x_cg_demo_api_key:apikey,
+			Access-Control-Allow-Origin:*
             }
         })
    
@@ -36,7 +38,8 @@ async function fetchSearch(searchTerm) {
     try{
     const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${searchTerm}`,{
             headers:{
-                x_cg_demo_api_key:apikey
+                x_cg_demo_api_key:apikey,
+		    Access-Control-Allow-Origin:*
             }
         })
     const data = await res.json()
