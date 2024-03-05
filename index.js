@@ -40,7 +40,7 @@ fetchData()
 function displayData(data,ids) {
     const assets = data.sort((a,b)=>{
         return b.current_price-a.current_price
-    })
+    }).slice(0,100)
     if(ids.length>0) {
         coins.innerHTML=data && data.length>0 ?generateCionsHTML(data) : "Coin not found"
         return
@@ -84,7 +84,7 @@ function generateCionsHTML(coins) {
         <div class="coin_wrap">
         
         <div class="pic_coin">
-            <img width="30px" src="${coin.image}" alt="">
+            <img style="background-color:#fff" width="30px" src="${coin.image}" alt="">
             <div>
                 <h4>${(coin.symbol).toUpperCase()}</h4>
                 <p>
