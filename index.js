@@ -20,7 +20,7 @@ async function fetchData(ids="") {
         container.style.display="none"
     } catch(e) {
         container.style.display="flex"
-        container.innerHTML=`<p>${e}</p>`
+        container.innerHTML=`<p> Unexpected error occurred.  </p>`
     }
 }
 async function fetchSearch(searchTerm) {
@@ -32,7 +32,7 @@ async function fetchSearch(searchTerm) {
         container.style.display="none"
     } catch(e) {
         container.style.display="flex"
-        container.innerHTML=`<p>${e}</p>`
+        container.innerHTML=`<p> Unexpected error occurred. </p>`
     }
 }
 fetchData()
