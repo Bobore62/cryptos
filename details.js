@@ -110,7 +110,7 @@ function displayMarket(data) {
     
     const coin = data.find(c=>c.id===id)
     let coinPrice = priceFormat(coin)
-   price.innerHTML= "$"+stringFormat(coinPrice)
+   price.innerHTML=coin.current_price ? "$"+stringFormat(coinPrice) : "$0.00"
     title.innerText=`Info (${coin.name})`
     document.querySelector('.stat-section')
       .innerHTML =`
@@ -118,19 +118,19 @@ function displayMarket(data) {
             <div class="stat">
                 <div>
                     <span>Market Cap</span>
-                    <span class="decs">$${stringFormat(coin.market_cap.toFixed())}</span>
+                    <span class="decs">$${coin.market_cap ? stringFormat(coin.market_cap.toFixed()):0}</span>
                 </div>
                 <div>
                     <span>Total Volume</span>
-                    <span class="decs">$${stringFormat(coin.total_volume.toFixed())}</span>
+                    <span class="decs">$${ coin.total_volume?stringFormat(coin.total_volume.toFixed()):0}</span>
                 </div>
                 <div>
                     <span>Circulating Supply</span>
-                    <span class="decs">${stringFormat(coin.circulating_supply.toFixed())} ${coin.symbol.toUpperCase()}</span>
+                    <span class="decs">${coin.circulating_supply? stringFormat(coin.circulating_supply.toFixed()): 0} ${coin.symbol.toUpperCase()}</span>
                 </div>
                 <div>
                     <span>Total Supply</span>
-                    <span class="decs">${stringFormat(coin.total_supply.toFixed())} ${coin.symbol.toUpperCase()}</span>
+                    <span class="decs">${coin.total_supply? stringFormat(coin.total_supply.toFixed()):0} ${coin.symbol.toUpperCase()}</span>
                 </div>
             </div>
 `
