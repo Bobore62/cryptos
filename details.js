@@ -26,7 +26,7 @@ function chart(data) {
     const len = startLength>=endLength ? startLength :endLength
     let startPrice=startFormat*10**len
     let currentPrice=endFormat*10**len
-    grow = (currentPrice-startPrice)/(currentPrice)*100
+    grow = (currentPrice-startPrice)/(startPrice)*100
 let x=[]
 let y =[]
 data.forEach(e=>{
@@ -67,7 +67,7 @@ async function fetchData(url) {
     container.style.display="none"
     } catch(e) {
     container.style.display="flex"
-    container.innerHTML=`<p>${e}</p>`
+    container.innerHTML=`<p>Unexpected error occurred.</p>`
     }
     
 }
@@ -79,7 +79,7 @@ async function fetchDetails(url) {
         container.style.display="none"
     } catch(e) {
     container.style.display="flex"
-    container.innerHTML=`<p>${e}</p>`
+    container.innerHTML=`<p>Unexpected error occurred.</p>`
     }
 }
 async function fetchMarket(url) {
@@ -91,7 +91,7 @@ async function fetchMarket(url) {
         container.style.display="none"
     } catch(e) {
     container.style.display="flex"
-    container.innerHTML=`<p>${e}</p>`
+    container.innerHTML=`<p> Unexpected error occurred.  </p>`
     }
 }
 function displayChart(data) {
