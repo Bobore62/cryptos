@@ -9,20 +9,10 @@ async function fetchData(ids="") {
     try{
         let res
         if(ids) {
-             res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=["bitcoin",${ids},"bitcoin"]`,{
-            headers:{
-                x_cg_demo_api_key:apikey,
-		   " Access-Control-Allow-Origin":*
-            }
-        })
+             res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=["bitcoin",${ids},"bitcoin"]&x_cg_demo_api_key=${apikey}`)
    
         } else {
-            res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd',{
-                headers:{
-                    x_cg_demo_api_key:apikey,
-			"Access-Control-Allow-Origin":*
-            }
-        })
+            res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&x_cg_demo_api_key=${apikey}`)
    
         }
     const data = await res.json()
@@ -36,12 +26,7 @@ async function fetchData(ids="") {
 async function fetchSearch(searchTerm) {
     container.style.display="flex"
     try{
-    const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${searchTerm}`,{
-            headers:{
-                x_cg_demo_api_key:apikey,
-		    "Access-Control-Allow-Origin":*
-            }
-        })
+    const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${searchTerm}&x_cg_demo_api_key=${apikey}`)
     const data = await res.json()
     displayDataSearch(data.coins)
         container.style.display="none"
