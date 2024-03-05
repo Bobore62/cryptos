@@ -110,7 +110,7 @@ function displayMarket(data) {
     
     const coin = data.find(c=>c.id===id)
     let coinPrice = priceFormat(coin)
-   price.innerHTML= stringFormat(coinPrice)
+   price.innerHTML= "$"+stringFormat(coinPrice)
     title.innerText=`Info (${coin.name})`
     document.querySelector('.stat-section')
       .innerHTML =`
