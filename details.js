@@ -9,9 +9,9 @@ const container= document.getElementsByClassName('load')[0]
 let days = 1;
 let grow =0;
 const apikey ="CG-KfVwh2DmF1mTTwLVJPxGUXmD"
-let chartUrl =`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
-const historyUrl =`https://api.coingecko.com/api/v3/coins/${id}?vs_currency=usd`
-const marketUrl =`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}`
+let chartUrl =`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&x_cg_demo_api_key=${apikey}`
+const historyUrl =`https://api.coingecko.com/api/v3/coins/${id}?vs_currency=usd&x_cg_demo_api_key=${apikey}`
+const marketUrl =`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}&x_cg_demo_api_key=${apikey}`
 function chart(data) {
     const start = {
         current_price:data[0][1]
@@ -61,12 +61,7 @@ buttons[0].style.backgroundColor='grey'
 fetchDetails(historyUrl)
 async function fetchData(url) {
     try{
-        const res = await fetch(url,{
-            headers:{
-                x_cg_demo_api_key:apikey,
-		    "Access-Control-Allow-Origin": *
-            }
-        })
+        const res = await fetch(url)
     const data = await res.json()
     displayChart(data)
     container.style.display="none"
@@ -78,12 +73,7 @@ async function fetchData(url) {
 }
 async function fetchDetails(url) {
     try{
-    const res = await fetch(url,{
-            headers:{
-                x_cg_demo_api_key:apikey,
-		   " Access-Control-Allow-Origin":*
-            }
-    })
+    const res = await fetch(url)
     const data = await res.json()
     displayData(data)
         container.style.display="none"
@@ -94,12 +84,7 @@ async function fetchDetails(url) {
 }
 async function fetchMarket(url) {
     try{
-    const res = await fetch(url,{
-            headers:{
-                x_cg_demo_api_key:apikey,
-		    "Access-Control-Allow-Origin":*
-            }
-        })
+    const res = await fetch(url)
     const data = await res.json()
         
         displayMarket(data)
