@@ -31,7 +31,7 @@ let x=[]
 let y =[]
 data.forEach(e=>{
     const ex = new Date(e[0]).toUTCString()
-x.push(ex.slice(3,ex.lastIndexOf(" ")))
+x.push(ex.slice(4,ex.lastIndexOf(" ")))
 y.push(e[1])
 })
 new Chart("chart", {
